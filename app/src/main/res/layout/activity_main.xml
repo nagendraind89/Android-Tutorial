@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/iv_car"
+        android:src="@drawable/car"
+        android:scaleType="fitXY"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:text="BMW 2018"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="20dp"
+         android:layout_toRightOf="@+id/btn_pin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/tv_carDesc"
+        android:layout_below="@+id/tv_title"
+        android:layout_toRightOf="@+id/iv_car"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="BMW Indiais a subsidiary of the BMW Group. It is based in India and its headquarters are located in Chennai."
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:id="@+id/btn_pin"
+        android:background="@drawable/pin"
+        android:layout_toRightOf="@+id/iv_car"
+        android:layout_width="50dp"
+        android:layout_height="50dp" />
+
+
+    <LinearLayout
+        android:layout_below="@+id/iv_car"
+        android:id="@+id/ll_images"
+        android:background="@color/colorAccent"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </LinearLayout>
+</RelativeLayout>
