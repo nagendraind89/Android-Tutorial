@@ -9,6 +9,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -39,11 +40,17 @@ public class MyRAdapter extends RecyclerView.Adapter<MyRAdapter.MyHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyHolder holder, int postion) {
+    public void onBindViewHolder(@NonNull MyHolder holder, final int postion) {
         //it will iterate mylist and set the list data into tv_email for each row
         holder.tv_email.setText(mnames.get(postion));
         Picasso.get().load(mimages.get(postion)).into(holder.imageView);
 
+        holder.btn_show.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println(" Clicked button Of Position ::"+postion+""+mnames.get(postion));
+            }
+        });
     }
 
     @Override
@@ -54,12 +61,14 @@ public class MyRAdapter extends RecyclerView.Adapter<MyRAdapter.MyHolder> {
     class MyHolder extends RecyclerView.ViewHolder {
 
         TextView tv_email;
+        Button btn_show;
         ImageView imageView;
         public MyHolder(@NonNull View itemView) {
             super(itemView);
             //step 4:- getting the inner Views like TextView and creating View Resource Object
          tv_email= itemView.findViewById(R.id.tv_email);
          imageView= itemView.findViewById(R.id.img);
+         btn_show=itemView.findViewById(R.id.btn_show);
         }
     }
 }
